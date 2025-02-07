@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=EB+Garamond:ital@0;1&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Schoolbell&family=Sora:wght@100..800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+body {
+  background-color: rgb(255, 223, 245);
+  background: url("res/img/tulipBg.webp");
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem;
+  backdrop-filter: blur(3px);
+}
+
+#welcome {
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+#welcome.fade {
+  opacity: 0;
+  height: 0;
+}
+
+.welcomeImg {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.welcomeImg .profileWelcome {
+  object-fit: cover;
+  width: 25rem;
+  height: 25rem;
+  object-position: 100% 100%;
+  border-radius: 50%;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.imgContainer {
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.welcomeImg .profileWelcome:hover {
+  transform: scale(1.1);
+}
+
+@keyframes horizontal-shaking {
+  0% {
+    transform: translateX(0);
+
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: translateX(5px);
+
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: translateX(-5px);
+
+    transform: rotate(-15deg);
+  }
+  75% {
+    transform: translateX(5px);
+
+    transform: rotate(10deg) scale(1.1);
+  }
+  100% {
+    transform: translateX(0);
+
+    transform: rotate(5deg) scale(1.1);
+  }
+}
+
+#letter {
+  width: 20rem;
+  height: auto;
+  transition: 0.2s;
+}
+
+#letter:hover {
+  animation: horizontal-shaking 0.8s;
+  transform: rotate(5deg) scale(1.1);
+  filter: invert(78%) sepia(25%) saturate(331%) hue-rotate(290deg)
+    brightness(98%) contrast(110%);
+  cursor: pointer;
+}
+
+.contentMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 45rem;
+  width: 100rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  border: 5px solid rgb(106, 189, 106);
+  transition: 1.5s;
+}
+
+.contentMessage.extend {
+  height: 55rem;
+}
+
+#message {
+  opacity: 0;
+  height: 0;
+  transition: opacity 3s;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+#message.fade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: initial;
+  z-index: 1;
+  opacity: 1;
+  gap: 2rem;
+}
+
+.message img {
+  filter: drop-shadow(0 0 8px rgb(109, 221, 255));
+}
+
+.message p {
+  width: 90rem;
+  text-align: justify;
+  background-color: rgb(255, 229, 229);
+  box-shadow: 4px 4px 0 rgb(255, 169, 169);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.message h1 {
+  text-shadow: 4px 4px 0 rgb(255, 169, 169);
+}
+
+/* Buttons */
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.buttonContainer button {
+  border: none;
+  padding: 0.5rem 3rem;
+  text-align: center;
+  font-size: 1rem;
+  font-style: bold;
+  background-color: rgb(255, 156, 156);
+  border: 2px solid transparent;
+  border-radius: 5px;
+}
+
+.buttonContainer button:hover {
+  background-color: rgb(230, 128, 170);
+  transition: background-color 0.2s;
+  cursor: pointer;
+  border: 2px solid red;
+}
+
+.buttonContainer button:first-child {
+  background-color: lightgreen;
+  transition: background-color 0.2s;
+  border: 2px solid transparent;
+  border-radius: 5px;
+}
+
+.buttonContainer button:first-child:hover {
+  background-color: rgb(123, 226, 183);
+  cursor: pointer;
+  border: 2px solid green;
+}
+
+/* ily page */
+
+.ily {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 1;
+}
+
+.ily img {
+  width: 30rem;
+}
+
+#ilyButton {
+  background-color: rgb(255, 247, 170);
+}
+
+#ilyButton:hover {
+  background-color: rgb(236, 197, 139);
+  border-color: orange;
+}
+
+#ily.fade {
+  z-index: -1;
+  opacity: 0;
+  height: 0;
+}
+
+/* heart css */
+
+.heart {
+  position: fixed;
+  font-size: 1.5rem;
+  top: -1vh;
+  transform: translateY(0);
+  animation: fall 3s linear forwards;
+}
+
+.heart img {
+  width: 40px;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(0vh) translateX(-10vw);
+  }
+  to {
+    transform: translateY(105vh) translateX(10vw);
+  }
+}
